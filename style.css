@@ -1,0 +1,74 @@
+*, *:is(::after, ::before) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 1rem "Helvetica", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+body .glass-card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .glass-card span {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 250px;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  transform-origin: 125px 0;
+  rotate: calc(90deg * var(--i));
+  background-color: var(--background-color);
+  filter: blur(80px);
+  opacity: 75%;
+}
+body .glass-card .card {
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+body .glass-card .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  transform: skewX(345deg);
+}
+body .glass-card .card .text {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgb(51, 51, 51);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+body .glass-card .card .text i {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=style.css.map */
